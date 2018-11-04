@@ -1,0 +1,10 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "ordered-imports": false,
+    "no-console": false,
+    "trailing-comma": false,
+    "curly": false,
+    "eofline": false
+  }
+}
