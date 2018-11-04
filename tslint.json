@@ -5,6 +5,9 @@
     "no-console": false,
     "trailing-comma": false,
     "curly": false,
-    "eofline": false
+    "eofline": false,
+    "interface-name": false,
+    "member-access": false,
+    "arrow-parens": false
   }
 }
