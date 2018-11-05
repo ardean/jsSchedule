@@ -9,7 +9,7 @@ export const list = (req: Request, res: Response, next: NextFunction) => {
   } catch (err) {
     next(err);
   }
-}
+};
 
 export const create = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -38,7 +38,7 @@ export const create = async (req: Request, res: Response, next: NextFunction) =>
   } catch (err) {
     next(err);
   }
-}
+};
 
 export const update = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -73,7 +73,7 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
   } catch (err) {
     next(err);
   }
-}
+};
 
 export const remove = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -86,4 +86,4 @@ export const remove = async (req: Request, res: Response, next: NextFunction) =>
   } catch (err) {
     next(err);
   }
-}
+};

@@ -8,6 +8,7 @@
     "eofline": false,
     "interface-name": false,
     "member-access": false,
-    "arrow-parens": false
+    "arrow-parens": false,
+    "object-literal-sort-keys": false
   }
 }

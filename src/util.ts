@@ -45,16 +45,16 @@ export const createRule = (interval: Interval, values) => {
 };
 
 export const shutdown = async () => {
-  if (process.platform === "linux") return await execute("systemctl poweroff");
+  if (process.platform === "linux") return await execute("shutdown -h now");
   if (process.platform === "win32") return await execute("shutdown /h /t 0");
   if (process.platform === "darwin") return await execute("shutdown -h now");
-}
+};
 
 export const reboot = async () => {
-  if (process.platform === "linux") return await execute("systemctl reboot");
+  if (process.platform === "linux") return await execute("shutdown -r now");
   if (process.platform === "win32") return await execute("shutdown /r /t 0");
   if (process.platform === "darwin") return await execute("shutdown -r now");
-}
+};
 
 export const execute = (command: string) => {
   log(`execute: ${command}`);
@@ -65,4 +65,4 @@ export const execute = (command: string) => {
       resolve(stdout);
     });
   });
-}
+};

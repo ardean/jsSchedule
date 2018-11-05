@@ -46,7 +46,7 @@ exports.createRule = (interval, values) => {
 };
 exports.shutdown = async () => {
     if (process.platform === "linux")
-        return await exports.execute("systemctl poweroff");
+        return await exports.execute("shutdown -h now");
     if (process.platform === "win32")
         return await exports.execute("shutdown /h /t 0");
     if (process.platform === "darwin")
@@ -54,7 +54,7 @@ exports.shutdown = async () => {
 };
 exports.reboot = async () => {
     if (process.platform === "linux")
-        return await exports.execute("systemctl reboot");
+        return await exports.execute("shutdown -r now");
     if (process.platform === "win32")
         return await exports.execute("shutdown /r /t 0");
     if (process.platform === "darwin")
