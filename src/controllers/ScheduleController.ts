@@ -17,7 +17,7 @@ export const create = async (req: Request, res: Response, next: NextFunction) =>
       name,
       interval = "daily",
       action = "shutdown",
-      execute
+      // execute
     } = req.body;
 
     let { rule } = req.body;
@@ -29,7 +29,7 @@ export const create = async (req: Request, res: Response, next: NextFunction) =>
       interval,
       rule,
       action,
-      execute
+      // execute
     };
 
     schedule = await scheduler.add(schedule);
@@ -47,7 +47,7 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
       name,
       interval = "daily",
       action = "shutdown",
-      execute
+      // execute
     } = req.body;
     if (!id) throw new Error("id_required");
 
@@ -64,7 +64,7 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
       interval,
       rule,
       action,
-      execute
+      // execute
     };
 
     schedule = await scheduler.update(schedule);

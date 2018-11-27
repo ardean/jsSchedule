@@ -12,7 +12,7 @@ exports.list = (req, res, next) => {
 };
 exports.create = async (req, res, next) => {
     try {
-        const { name, interval = "daily", action = "shutdown", execute } = req.body;
+        const { name, interval = "daily", action = "shutdown", } = req.body;
         let { rule } = req.body;
         rule = util_1.createRule(interval, rule);
         if (!rule)
@@ -22,7 +22,6 @@ exports.create = async (req, res, next) => {
             interval,
             rule,
             action,
-            execute
         };
         schedule = await scheduler_1.default.add(schedule);
         res.json(schedule);
@@ -34,7 +33,7 @@ exports.create = async (req, res, next) => {
 exports.update = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const { name, interval = "daily", action = "shutdown", execute } = req.body;
+        const { name, interval = "daily", action = "shutdown", } = req.body;
         if (!id)
             throw new Error("id_required");
         let { rule } = req.body;
@@ -47,8 +46,7 @@ exports.update = async (req, res, next) => {
         let schedule = Object.assign({}, old, { name,
             interval,
             rule,
-            action,
-            execute });
+            action });
         schedule = await scheduler_1.default.update(schedule);
         res.json(schedule);
     }
@@ -68,4 +66,4 @@ exports.remove = async (req, res, next) => {
         next(err);
     }
 };
-//# sourceMappingURL=schedules.js.map
+//# sourceMappingURL=ScheduleController.js.map

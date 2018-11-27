@@ -65,9 +65,9 @@ export class Scheduler {
           case "reboot":
             await reboot();
             break;
-          case "execute":
-            await execute(schedule.execute);
-            break;
+          // case "execute":
+          //   await execute(schedule.execute);
+          //   break;
         }
       } catch (err) {
         console.error(err);

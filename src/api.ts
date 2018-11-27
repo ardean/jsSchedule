@@ -1,15 +1,19 @@
+import * as cors from "cors";
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import * as schedules from "./controllers/schedules";
-import * as cors from "cors";
+import * as ScheduleController from "./controllers/ScheduleController";
+import * as CommandController from "./controllers/CommandController";
 
 const api = express.Router();
 api.use(cors());
 api.use(bodyParser.json());
 
-api.get("/schedules", schedules.list);
-api.post("/schedules", schedules.create);
-api.put("/schedules/:id", schedules.update);
-api.delete("/schedules/:id", schedules.remove);
+api.get("/schedules", ScheduleController.list);
+api.post("/schedules", ScheduleController.create);
+api.put("/schedules/:id", ScheduleController.update);
+api.delete("/schedules/:id", ScheduleController.remove);
+
+api.post("/shutdown", CommandController.shutdown);
+api.post("/reboot", CommandController.reboot);
 
 export default api;

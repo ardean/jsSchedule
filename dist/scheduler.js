@@ -54,9 +54,6 @@ class Scheduler {
                     case "reboot":
                         await util_2.reboot();
                         break;
-                    case "execute":
-                        await util_2.execute(schedule.execute);
-                        break;
                 }
             }
             catch (err) {
